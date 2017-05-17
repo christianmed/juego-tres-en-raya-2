@@ -117,7 +117,6 @@ function reset() {
 function init() {
   setTurn();
   for (let cell of cells) {
-    cell.innerHTML = '';
     cell.addEventListener('click', fillCell);
   }
 

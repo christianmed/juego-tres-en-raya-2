@@ -85,6 +85,8 @@ body {
         color: var(--color6);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+        .game-container__header .players [class^="player-"] .name {
+          position: relative; }
         .game-container__header .players [class^="player-"].current {
           box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 -3px 0px var(--color2); }
   .game-container__body {
@@ -106,14 +108,7 @@ body {
       grid-gap: 6px;
       background: var(--color1); }
       .game-container__body .game-grid .cell {
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-                align-items: center;
-        font-size: 2em;
-        font-weight: 600;
+        position: relative;
         background: var(--color2);
         cursor: pointer; }
   .game-container__footer {
@@ -191,3 +186,40 @@ body {
       color: var(--color5);
       font-size: .5em;
       cursor: pointer; }
+
+.cross {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
+  .cross::before, .cross::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color6); }
+  .cross::before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .cross::after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+
+.circle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border-style: solid;
+  border-width: 5px;
+  border-color: var(--color5);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }

@@ -14,16 +14,20 @@ html(lang="es")
         header.game-container__header
           .players
             .player-X
-              .name X
+              .name
+                .cross
               .points#pointsX -
             .player-O
               .points#pointsO -
-              .name O
+              .name
+                .circle
         .game-container__body
           .game-grid#game-grid
             - var n = 10
             while --n
               .cell
+                .cross
+                .circle
         footer.game-container__footer
           button.btn-reset#btn-reset Reiniciar Partida
     
