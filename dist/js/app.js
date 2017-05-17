@@ -87,12 +87,18 @@ function setTurn() {
 function fillCell(e) {
   let index = cells.indexOf(e.target);
   if (turn % 2 === 1) {
-    e.target.innerHTML = firstPlayer;
-    e.target.style.color = '#545454';
+    if (firstPlayer === 'X') {
+      e.target.firstElementChild.classList.remove('hide');
+    } else {
+      e.target.lastElementChild.classList.remove('hide');
+    }
     checkWinner(index, firstPlayer);
   } else {
-    e.target.innerHTML = secondPlayer;
-    e.target.style.color = '#fff';
+    if (firstPlayer === 'X') {
+      e.target.lastElementChild.classList.remove('hide');
+    } else {
+      e.target.firstElementChild.classList.remove('hide');
+    }
     checkWinner(index, secondPlayer);
   }
   e.target.removeEventListener('click', fillCell);
@@ -107,7 +113,8 @@ function fillCell(e) {
 function reset() {
   for (let i = 0; i < array.length; i++) {
     array[i] = '';
-    cells[i].innerHTML = '';
+    cells[i].firstElementChild.classList.add('hide');
+    cells[i].lastElementChild.classList.add('hide');
   }
   turn = 1;
   winner = false;

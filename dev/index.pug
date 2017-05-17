@@ -15,19 +15,17 @@ html(lang="es")
           .players
             .player-X
               .name
-                .cross
               .points#pointsX -
             .player-O
               .points#pointsO -
               .name
-                .circle
         .game-container__body
           .game-grid#game-grid
             - var n = 10
             while --n
               .cell
-                .cross
-                .circle
+                .cross.hide
+                .circle.hide
         footer.game-container__footer
           button.btn-reset#btn-reset Reiniciar Partida
     

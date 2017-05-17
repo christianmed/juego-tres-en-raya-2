@@ -71,24 +71,65 @@ body {
       -webkit-box-align: center;
               align-items: center; }
       .game-container__header .players [class^="player-"] {
+        position: relative;
         width: 47%;
         height: 50px;
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-pack: justify;
-                justify-content: space-between;
-        -webkit-box-align: center;
-                align-items: center;
-        padding: 0 .75em;
-        font-size: 1.5em;
-        font-weight: 600;
+        line-height: 55px;
+        font-family: sans-serif;
+        font-size: 1.75em;
         color: var(--color6);
+        font-weight: 600;
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-        .game-container__header .players [class^="player-"] .name {
-          position: relative; }
         .game-container__header .players [class^="player-"].current {
           box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.1), inset 0 -3px 0px var(--color2); }
+      .game-container__header .players .player-X .name {
+        position: absolute;
+        width: 30px;
+        height: 5px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        left: .25em; }
+        .game-container__header .players .player-X .name::before, .game-container__header .players .player-X .name::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: var(--color6); }
+        .game-container__header .players .player-X .name::before {
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg); }
+        .game-container__header .players .player-X .name::after {
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+      .game-container__header .players .player-X .points {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        right: .25em; }
+      .game-container__header .players .player-O .name {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: transparent;
+        border-style: solid;
+        border-width: 5px;
+        border-color: var(--color6);
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        right: .25em; }
+      .game-container__header .players .player-O .points {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        left: .25em; }
   .game-container__body {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
@@ -209,6 +250,8 @@ body {
   .cross::after {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg); }
+  .cross.hide {
+    display: none; }
 
 .circle {
   position: absolute;
@@ -223,3 +266,5 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
+  .circle.hide {
+    display: none; }
