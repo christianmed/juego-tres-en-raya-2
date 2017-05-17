@@ -35,14 +35,13 @@ $size3: 100px;
   --size3: 100px;
 }
 
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
+@function rem($size) {
+  @return ($size / 16) * 1rem;
 }
 
 @mixin font-size($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size: rem($size);
 }
 
 @mixin circle($size, $border, $color) {
