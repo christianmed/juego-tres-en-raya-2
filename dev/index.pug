@@ -1,0 +1,35 @@
+doctype
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Tres en Raya
+    link(href="https://fonts.googleapis.com/css?family=Raleway:300,400,700", rel="stylesheet")
+    link(href="css/styles.css", rel="stylesheet")
+  body
+    header.main-header Tres en Raya
+    main.main-container
+      .game-container
+        header.game-container__header
+          .players
+            .player-X
+              .name X
+              .points#pointsX -
+            .player-O
+              .points#pointsO -
+              .name O
+        .game-container__body
+          .game-grid#game-grid
+            - var n = 10
+            while --n
+              .cell
+        footer.game-container__footer
+          button.btn-reset#btn-reset Reiniciar Partida
+    
+    .modal#modal
+      .result
+        #result
+        .btn-close#btn-close X
+    
+    script(src="js/app.js")

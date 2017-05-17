@@ -1,0 +1,47 @@
+// colors
+
+$color1: #4FA299;
+$color2: #7EC6BE;
+$color3: #328B82;
+// $color1: #14BDAC;
+// $color2: #62D3C7;
+// $color3: #0DA192;
+// $color1: #EE6E73;
+// $color2: #EF9A9A;
+// $color3: #BF585C;
+$color4: #eee;
+$color5: #fff;
+$color6: #545454;
+$size1: 100px;
+$size2: 6px;
+$size3: 100px;
+
+:root {
+  --color1: #4FA299;
+  --color2: #7EC6BE;
+  --color3: #328B82;
+  // --color1: #14BDAC;
+  // --color2: #62D3C7;
+  // --color3: #0DA192;
+  // --color1: #EE6E73;
+  // --color2: #EF9A9A;
+  // --color3: #BF585C;
+  --color4: #eee;
+  --color5: #fff;
+  --color6: #545454;
+  --color7: #292d3e;
+  --size1: 100px;
+  --size2: 6px;
+  --size3: 100px;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+

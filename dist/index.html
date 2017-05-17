@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tres en Raya</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="main-header">Tres en Raya</header>
+    <main class="main-container">
+      <div class="game-container">
+        <header class="game-container__header">
+          <div class="players">
+            <div class="player-X">
+              <div class="name">X</div>
+              <div class="points" id="pointsX">-</div>
+            </div>
+            <div class="player-O">
+              <div class="points" id="pointsO">-</div>
+              <div class="name">O</div>
+            </div>
+          </div>
+        </header>
+        <div class="game-container__body">
+          <div class="game-grid" id="game-grid">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+          </div>
+        </div>
+        <footer class="game-container__footer">
+          <button class="btn-reset" id="btn-reset">Reiniciar Partida</button>
+        </footer>
+      </div>
+    </main>
+    <div class="modal" id="modal">
+      <div class="result">
+        <div id="result"></div>
+        <div class="btn-close" id="btn-close">X</div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
